@@ -153,7 +153,9 @@ function listos() {
 
 function conteo() {
     var sfxclick = new Audio('sfx/Jump.mp3');
-    document.querySelector('.msj').style.opacity = "0";
+    var msj = document.querySelector('.msj');
+    msj.style.opacity = "0";
+    msj.style.pointerEvents = "none";
     document.querySelector('.no3').style.opacity = "1";
     sfxclick.play();
 
@@ -166,14 +168,62 @@ function conteo() {
             document.querySelector('.no2').style.opacity = "0";
             document.querySelector('.no1').style.opacity = "1";
             sfxclick.play();
-            tiempoRandom = Math.floor((Math.random() * 10) + 1);
-            tiempoRandom = tiempoRandom + "000"
+            // Tiempo aleatorio entre 1 y 5 segundos (en milisegundos)
+            let tiempoRandom = (Math.floor(Math.random() * 5) + 1) * 1000;
 
             setTimeout(function () {
                 document.querySelector('.no1').style.opacity = "0";
                 document.querySelector('.conteo').style.display = "none";
                 sfxclick.play();
+                
+                // Habilitar disparos
+                document.querySelector('.left').setAttribute('onclick', 'disparo1()');
+                document.querySelector('.right').setAttribute('onclick', 'disparo2()');
             }, tiempoRandom);
         }, 1000);
     }, 1000);
+}
+
+function disparo1() {
+    console.log("Jugador 1 dispara");
+    document.querySelector('.right').setAttribute('onclick', '');
+    document.querySelector('.left').setAttribute('onclick', '');
+    
+    // El jugador 2 (derecha) es eliminado
+    document.querySelector('.p2').style.right = "-800px";
+    
+    // Animación de disparo para jugador 1
+    document.querySelector('.p1').style.left = "10px";
+    setTimeout(function () {
+        document.querySelector('.p1').style.left = "6%"; // Regresa a su posición original
+    }, 150);
+
+    reproducirAudio('sfx/Jump.mp3');
+
+    // Reiniciar juego tras 2 segundos
+    setTimeout(function () {
+        window.location.reload();
+    }, 2000);
+}
+
+function disparo2() {
+    console.log("Jugador 2 dispara");
+    document.querySelector('.right').setAttribute('onclick', '');
+    document.querySelector('.left').setAttribute('onclick', '');
+    
+    // El jugador 1 (izquierda) es eliminado
+    document.querySelector('.p1').style.left = "-800px";
+    
+    // Animación de disparo para jugador 2
+    document.querySelector('.p2').style.right = "10px";
+    setTimeout(function () {
+        document.querySelector('.p2').style.right = "2.5%"; // Regresa a su posición original
+    }, 150);
+
+    reproducirAudio('sfx/Jump.mp3');
+
+    // Reiniciar juego tras 2 segundos
+    setTimeout(function () {
+        window.location.reload();
+    }, 2000);
 }

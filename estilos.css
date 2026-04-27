@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Sancreek", serif;
@@ -6,11 +6,12 @@
     font-style: normal;
 }
 
-body, html{
+body,
+html {
     overflow: hidden;
 }
 
-.bg-inicio{
+.bg-inicio {
     background-image: url("img/main.png");
     background-size: cover;
     position: absolute;
@@ -21,7 +22,7 @@ body, html{
     display: block;
 }
 
-.btn-inicio{
+.btn-inicio {
     width: 200px;
     height: 60px;
     border-radius: 8px;
@@ -36,13 +37,13 @@ body, html{
     box-shadow: 0px 10px 0px 4px #864916, 0px 10px 50px 50px rgba(0, 0, 0, .5);
 }
 
-.btn-inicio:active{
+.btn-inicio:active {
     box-shadow: 0px 4px 0px 4px #864916, 0px 5px 25px 25px rgba(0, 0, 0, .5);
     background: #f1ac39;
     bottom: 24px;
 }
 
-.bg-transicion{
+.bg-transicion {
     background: rgba(0, 0, 0, 1);
     position: absolute;
     top: 0px;
@@ -55,18 +56,18 @@ body, html{
     pointer-events: none;
 }
 
-.bg-transicion-show{
+.bg-transicion-show {
     opacity: 1;
     filter: blur(0px);
     z-index: 99999;
 }
 
-.bg-transicion-hide{
+.bg-transicion-hide {
     opacity: 0;
     filter: blur(2px);
 }
 
-.bg-personaje{
+.bg-personaje {
     background-image: url("img/bg_personaje.png");
     background-size: cover;
     display: block;
@@ -77,7 +78,7 @@ body, html{
     left: 0px;
 }
 
-.titulo{
+.titulo {
     float: left;
     width: 100%;
     height: 80px;
@@ -88,13 +89,13 @@ body, html{
     line-height: 80px;
 }
 
-.personajes{
+.personajes {
     float: left;
     width: 100%;
     height: calc(100% - 160px);
 }
 
-.anterior{
+.anterior {
     margin-left: 10%;
     width: 100px;
     height: 100%;
@@ -104,11 +105,11 @@ body, html{
     background: none;
 }
 
-.anterior img{
+.anterior img {
     width: 100%;
 }
 
-.personaje{
+.personaje {
     float: left;
     width: calc(80% - 200px);
     height: 100%;
@@ -116,23 +117,39 @@ body, html{
     animation: p1 2s ease-in-out infinite;
 }
 
-@keyframes p1{
-    0%{transform: scaleY(1);}
-    50%{transform: scaleY(1.05) translateY(-5px);}
-    100%{transform: scaleY(1);}
+@keyframes p1 {
+    0% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.05) translateY(-5px);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
 }
 
-@keyframes p2{
-    0%{transform: scaleY(1) rotateY(180deg);}
-    50%{transform: scaleY(1.05) rotateY(180deg) translateY(-5px);}
-    100%{transform: scaleY(1) rotateY(180deg);}
+@keyframes p2 {
+    0% {
+        transform: scaleY(1) rotateY(180deg);
+    }
+
+    50% {
+        transform: scaleY(1.05) rotateY(180deg) translateY(-5px);
+    }
+
+    100% {
+        transform: scaleY(1) rotateY(180deg);
+    }
 }
 
-.personaje img{
+.personaje img {
     height: 100%;
 }
 
-.siguiente{
+.siguiente {
     width: 100px;
     height: 100%;
     float: left;
@@ -141,18 +158,18 @@ body, html{
     background: none;
 }
 
-.siguiente img{
+.siguiente img {
     width: 100%;
 }
 
-.barra{
+.barra {
     float: left;
     width: 100%;
     height: 80px;
     background: none;
 }
 
-.txt-nombre{
+.txt-nombre {
     width: 300px;
     height: 60px;
     border-radius: 8px;
@@ -168,14 +185,14 @@ body, html{
     margin-left: calc(50% - 235px);
 }
 
-.btn-siguiente{
-   width: 150px;
-   height: 60px;
-   border-radius: 8px;
-   box-shadow: 0px 2px 0px 2px #864916;
-   border: none;
-   font-size: 25px;
-   background: #f1ac39;
+.btn-siguiente {
+    width: 150px;
+    height: 60px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 0px 2px #864916;
+    border: none;
+    font-size: 25px;
+    background: #f1ac39;
     color: #864916;
     position: relative;
     float: left;
@@ -183,7 +200,7 @@ body, html{
     margin-left: 20px;
 }
 
-.bg-juego{
+.bg-juego {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -198,13 +215,13 @@ body, html{
     overflow: hidden;
 }
 
-.left{
+.left {
     width: 50%;
     height: 100%;
     position: relative;
 }
 
-.p1{
+.p1 {
     position: absolute;
     left: 6%;
     bottom: 4%;
@@ -215,13 +232,13 @@ body, html{
     --personaje-img: none;
 }
 
-.right{
+.right {
     width: 50%;
     height: 100%;
     position: relative;
 }
 
-.p2{
+.p2 {
     position: absolute;
     right: 2.5%;
     bottom: 3%;
@@ -233,7 +250,7 @@ body, html{
 }
 
 .p1::after,
-.p2::after{
+.p2::after {
     content: "";
     position: absolute;
     inset: 0px;
@@ -243,11 +260,11 @@ body, html{
     background-position: center bottom;
 }
 
-.p2::after{
+.p2::after {
     transform: rotateY(180deg);
 }
 
-.p1 h2{
+.p1 h2 {
     position: fixed;
     top: 1%;
     left: 3%;
@@ -258,7 +275,7 @@ body, html{
     z-index: 10;
 }
 
-.p2 h2{
+.p2 h2 {
     position: fixed;
     top: 1%;
     right: 3%;
@@ -269,56 +286,73 @@ body, html{
     z-index: 10;
 }
 
-@media (max-width: 900px){
-    .bg-juego{
+@media (max-width: 900px) {
+    .bg-juego {
         background-size: cover;
         background-position: center;
     }
 
     .p1,
-    .p2{
+    .p2 {
         width: min(56vw, 470px);
         height: min(66vh, 500px);
     }
 
-    .p1{
+    .p1 {
         left: 4%;
         bottom: 3%;
     }
 
-    .p2{
+    .p2 {
         right: 1%;
         bottom: 2.5%;
     }
 
     .p1 h2,
-    .p2 h2{
+    .p2 h2 {
         font-size: clamp(26px, 6.4vw, 40px);
     }
 }
 
-.conteo{
+.conteo {
     display: block;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 99999;
-}   
+    pointer-events: all;
+}
 
-.msj, .no1, .no2, .no3{
+.msj,
+.no1,
+.no2,
+.no3 {
     width: 100%;
     position: absolute;
     height: 200px;
-    top: calc(50%-100px);
-    text-align: center;
+    top: calc(50% - 100px);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 4em;
     line-height: 200px;
     opacity: 0;
     transition: .3s all;
     color: #f1ac39;
     text-shadow: 0px 3px 0px rgba(0, 0, 0, .5);
+    pointer-events: none;
 }
 
-.no1 img, .no2 img, .no3 img{
+.msj {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.no1 img,
+.no2 img,
+.no3 img {
     height: 100%;
 }
